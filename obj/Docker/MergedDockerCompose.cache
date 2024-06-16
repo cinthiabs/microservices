@@ -1,0 +1,19 @@
+name: dockercompose5192134692231668453
+services:
+  catalog.api:
+    build:
+      context: C:\GITHUB\microservices\microservices
+      dockerfile: Catalog.API/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+    image: catalogapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+networks:
+  default:
+    name: dockercompose5192134692231668453_default
